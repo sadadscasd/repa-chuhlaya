@@ -1,0 +1,8 @@
+
+services:
+  pyt:
+    image: ghcr.io/sadadscasd/python2-on-compose:1.0
+  node:
+    image: ghcr.io/sadadscasd/node2-on-compose:1.0
+    ports:
+      - 5050:5050
