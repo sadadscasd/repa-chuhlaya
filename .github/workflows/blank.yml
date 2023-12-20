@@ -65,7 +65,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: docker compose
-        run: docker composse up -d
+        run: |
+          scp  -o "StrictHostKeyChecking no" docker-compose.yml "whywelive-nketemplate-tjee71v9dl9#vJO_uXdpA_W93EkCckS4A91kFZBqhbEh@whywelive-nketemplate-tjee71v9dl9.ssh.ws-eu107.gitpod.io" "cd /workspace/nke-template && docker compose pull && docker-compose up -d":/workspace/nke-template
         #TELEGA OLEGA
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
