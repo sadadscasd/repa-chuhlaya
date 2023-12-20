@@ -40,14 +40,14 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: "Все норм"
+          message: "Все норм build"
         if: success()
       - name: send telegram message on push2
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: "Все плёхо"
+          message: "Все плёхо build"
         if: failure()
 
   deploy:
@@ -65,19 +65,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: docker compose
-        run: docker compose up -d
+        run: docker composse up -d
         #TELEGA OLEGA
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: "Все норм"
+          message: "Все норм deploy"
         if: success()
       - name: send telegram message on push2
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: "Все плёхо"
+          message: "Все плёхо deploy"
         if: failure()
