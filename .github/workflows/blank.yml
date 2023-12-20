@@ -63,7 +63,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: docker compose
-        run: docker compose up
+        run: docker compose up -d
         #TELEGA OLEGA
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
